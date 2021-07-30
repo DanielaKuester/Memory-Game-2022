@@ -16,8 +16,7 @@ const icons = [
 const symbols = icons.concat(icons);
 const deck = document.querySelector(".deck");
 const cards = document.querySelectorAll(".card");
-
-console.log(symbols);
+const cardDeck = [];
 
 
 /*
@@ -42,7 +41,27 @@ function shuffle(array) {
     return array;
 }
 
-console.log(shuffle(symbols));
+
+function createCard() {
+	for (let i = 0; i < symbols.length; i ++) {
+		const card = document.createElement("li");
+		card.classList.add("card", "open", "show");
+		card.innerHTML = "<i class=\"fa fa-" + symbols[i] + "\"></i>";
+		deck.appendChild(card);
+		cardDeck.push(card);
+	}
+}
+
+console.log(symbols);
+
+function createDeck() {
+	shuffle(symbols);
+	createCard();
+}
+
+createDeck();
+console.log(cardDeck);
+
 
 /*
  * set up the event listener for a card. If a card is clicked:

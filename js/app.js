@@ -2,6 +2,23 @@
  * Create a list that holds all of your cards
  */
 
+const icons = [
+    "diamond",
+    "paper-plane-o",
+    "anchor",
+    "bolt",
+    "cube",
+    "leaf",
+    "bicycle",
+    "bomb"
+]
+
+const symbols = icons.concat(icons);
+const deck = document.querySelector(".deck");
+const cards = document.querySelectorAll(".card");
+
+console.log(symbols);
+
 
 /*
  * Display the cards on the page
@@ -25,6 +42,7 @@ function shuffle(array) {
     return array;
 }
 
+console.log(shuffle(symbols));
 
 /*
  * set up the event listener for a card. If a card is clicked:

@@ -46,7 +46,7 @@ function createCard() {
 	for (let i = 0; i < symbols.length; i ++) {
 		const card = document.createElement("li");
 		card.classList.add("card", "open", "show");
-		card.innerHTML = "<i class=\"fa fa-" + symbols[i] + "\"></i>";
+		card.innerHTML = `<i class="fa fa-${symbols[i]}"></i>`;
 		deck.appendChild(card);
 		cardDeck.push(card);
 	}

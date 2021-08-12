@@ -15,7 +15,6 @@ const icons = [
 
 const symbols = [...icons, ...icons];
 const deck = document.querySelector(".deck");
-const cards = document.querySelectorAll(".card");
 const cardDeck = [];
 
 
@@ -47,6 +46,7 @@ function createCard() {
 		const card = document.createElement("li");
 		card.classList.add("card", "open", "show");
 		card.innerHTML = `<i class="fa fa-${symbols[i]}"></i>`;
+        card.addEventListener('click', turnCard);
 		deck.appendChild(card);
 		cardDeck.push(card);
 	}
@@ -60,7 +60,21 @@ function createDeck() {
 }
 
 createDeck();
+
 console.log(cardDeck);
+console.log(symbols);
+
+function turnCard() {
+    /*
+    const turnedCard = [];
+    turnedCard.push(document.querySelectorAll('.card'));
+    console.log(`Is this an array? ${turnedCard}`);
+    */
+   for (i = 0; i < cardDeck.length; i++) {
+       console.log(cardDeck[i]);
+       cardDeck[i].classList.toggle("show");
+   }
+}
 
 
 /*

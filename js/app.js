@@ -13,7 +13,7 @@ const icons = [
     "bomb"
 ]
 
-const symbols = icons.concat(icons);
+const symbols = [...icons, ...icons];
 const deck = document.querySelector(".deck");
 const cards = document.querySelectorAll(".card");
 const cardDeck = [];

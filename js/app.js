@@ -16,6 +16,7 @@ const icons = [
 const symbols = [...icons, ...icons];
 const deck = document.querySelector(".deck");
 const cardDeck = [];
+let twoCards = [];
 
 
 /*
@@ -47,6 +48,7 @@ function createCard() {
 		newCard.classList.add("card");
 		newCard.innerHTML = `<i class="fa fa-${symbols[i]}"></i>`;
         newCard.addEventListener('click', turnCard);
+        newCard.addEventListener('click', pushCards);
 		deck.appendChild(newCard);
 		cardDeck.push(newCard);
 	}
@@ -55,6 +57,16 @@ function createCard() {
 function turnCard() {
     this.classList.toggle("open");
     this.classList.toggle("show");
+}
+
+function pushCards() {
+    if (twoCards.length < 2) {
+        twoCards.push(this);
+        console.log(this);
+        console.log(twoCards);
+    } else {
+        return;
+    }
 }
 
 function createDeck() {

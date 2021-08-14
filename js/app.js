@@ -47,11 +47,15 @@ function createCard() {
 		const newCard = document.createElement("li");
 		newCard.classList.add("card");
 		newCard.innerHTML = `<i class="fa fa-${symbols[i]}"></i>`;
-        newCard.addEventListener('click', turnCard);
-        newCard.addEventListener('click', pushCards);
+        clickCard(newCard);
 		deck.appendChild(newCard);
 		cardDeck.push(newCard);
 	}
+}
+
+function clickCard(chosenCard) {
+    chosenCard.addEventListener('click', turnCard);
+    chosenCard.addEventListener('click', pushCards);
 }
 
 function turnCard() {

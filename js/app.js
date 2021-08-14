@@ -46,7 +46,7 @@ function createCard() {
 		const card = document.createElement("li");
 		card.classList.add("card", "open", "show");
 		card.innerHTML = `<i class="fa fa-${symbols[i]}"></i>`;
-        card.addEventListener('click', turnCard);
+        card.addEventListener('click', turnCards);
 		deck.appendChild(card);
 		cardDeck.push(card);
 	}
@@ -64,14 +64,10 @@ createDeck();
 console.log(cardDeck);
 console.log(symbols);
 
-function turnCard() {
-    /*
-    const turnedCard = [];
-    turnedCard.push(document.querySelectorAll('.card'));
-    console.log(`Is this an array? ${turnedCard}`);
-    */
+function turnCards() {
    for (i = 0; i < cardDeck.length; i++) {
        console.log(cardDeck[i]);
+       cardDeck[i].classList.toggle("open");
        cardDeck[i].classList.toggle("show");
    }
 }

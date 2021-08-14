@@ -43,16 +43,19 @@ function shuffle(array) {
 
 function createCard() {
 	for (let i = 0; i < symbols.length; i ++) {
-		const card = document.createElement("li");
-		card.classList.add("card", "open", "show");
-		card.innerHTML = `<i class="fa fa-${symbols[i]}"></i>`;
-        card.addEventListener('click', turnCards);
-		deck.appendChild(card);
-		cardDeck.push(card);
+		const newCard = document.createElement("li");
+		newCard.classList.add("card");
+		newCard.innerHTML = `<i class="fa fa-${symbols[i]}"></i>`;
+        newCard.addEventListener('click', turnCard);
+		deck.appendChild(newCard);
+		cardDeck.push(newCard);
 	}
 }
 
-console.log(symbols);
+function turnCard() {
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+}
 
 function createDeck() {
 	shuffle(symbols);
@@ -60,17 +63,6 @@ function createDeck() {
 }
 
 createDeck();
-
-console.log(cardDeck);
-console.log(symbols);
-
-function turnCards() {
-   for (i = 0; i < cardDeck.length; i++) {
-       console.log(cardDeck[i]);
-       cardDeck[i].classList.toggle("open");
-       cardDeck[i].classList.toggle("show");
-   }
-}
 
 
 /*

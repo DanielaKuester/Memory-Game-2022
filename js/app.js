@@ -74,14 +74,15 @@ function matchCards() {
     }
     else {
         console.log("No match!");
-        cardOne.classList.remove("open", "show");
-        cardTwo.classList.remove("open", "show");
+        cardOne.classList.remove("open", "show", "noclick");
+        cardTwo.classList.remove("open", "show", "noclick");
         twoCards = [];
     }
 }
 
 function pushCards() {
     if (twoCards.length < 2) {
+        this.classList.add("noclick");
         twoCards.push(this);
         console.log(this);
         console.log(twoCards);

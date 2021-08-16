@@ -70,9 +70,13 @@ function matchCards() {
         console.log("It's a match!");
         cardOne.classList.add("match");
         cardTwo.classList.add("match");
+        twoCards = [];
     }
     else {
         console.log("No match!");
+        cardOne.classList.remove("open", "show");
+        cardTwo.classList.remove("open", "show");
+        twoCards = [];
     }
 }
 

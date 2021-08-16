@@ -74,9 +74,25 @@ function matchCards() {
     }
     else {
         console.log("No match!");
+        for (let i = 0; i < cardDeck.length; i++) {
+            if (cardDeck[i].classList.contains("match") === true) {
+                return;
+            }
+            else {
+                cardDeck[i].classList.add("noclick");
+            }
+        }
         setTimeout(function() {
-            cardOne.classList.remove("open", "show", "noclick");
-            cardTwo.classList.remove("open", "show", "noclick");
+            for (let i = 0; i < cardDeck.length; i++) {
+                if (cardDeck[i].classList.contains("match") === true) {
+                    return;
+                }
+                else {
+                    cardDeck[i].classList.remove("noclick");
+                }
+            }
+            cardOne.classList.remove("open", "show");
+            cardTwo.classList.remove("open", "show");
             twoCards = [];
         }, 2000);
     }

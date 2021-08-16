@@ -68,8 +68,8 @@ function matchCards() {
     let cardTwo = twoCards[1];
     if (cardOne.innerHTML === cardTwo.innerHTML) {
         console.log("It's a match!");
-        cardOne.classList.add("match");
-        cardTwo.classList.add("match");
+        cardOne.classList.add("match", "noclick");
+        cardTwo.classList.add("match", "noclick");
         twoCards = [];
     }
     else {

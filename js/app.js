@@ -68,6 +68,18 @@ function pushCards() {
         twoCards.push(this);
         console.log(this);
         console.log(twoCards);
+    } if (twoCards.length === 2) {
+        let cardOne = twoCards[0];
+        let cardTwo = twoCards[1];
+        if (cardOne.innerHTML === cardTwo.innerHTML) {
+            console.log("It's a match!");
+            cardOne.classList.add("match");
+            cardTwo.classList.add("match");
+        }
+        else {
+            console.log("No match!");
+        }
+        console.log("This array contains two cards!");
     } else {
         return;
     }

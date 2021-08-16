@@ -63,6 +63,28 @@ function turnCard() {
     this.classList.toggle("show");
 }
 
+function dontClick() {
+    for (let i = 0; i < cardDeck.length; i++) {
+        if (cardDeck[i].classList.contains("match") === true) {
+            return;
+        }
+        else {
+            cardDeck[i].classList.add("noclick");
+        }
+    }
+}
+
+function allowClick() {
+    for (let i = 0; i < cardDeck.length; i++) {
+        if (cardDeck[i].classList.contains("match") === true) {
+            return;
+        }
+        else {
+            cardDeck[i].classList.remove("noclick");
+        }
+    }
+}
+
 function matchCards() {
     let cardOne = twoCards[0];
     let cardTwo = twoCards[1];
@@ -70,29 +92,14 @@ function matchCards() {
         console.log("It's a match!");
         cardOne.classList.add("match", "noclick");
         cardTwo.classList.add("match", "noclick");
-        twoCards = [];
     }
     else {
         console.log("No match!");
-        for (let i = 0; i < cardDeck.length; i++) {
-            if (cardDeck[i].classList.contains("match") === true) {
-                return;
-            }
-            else {
-                cardDeck[i].classList.add("noclick");
-            }
-        }
+        dontClick();
         setTimeout(function() {
-            for (let i = 0; i < cardDeck.length; i++) {
-                if (cardDeck[i].classList.contains("match") === true) {
-                    return;
-                }
-                else {
-                    cardDeck[i].classList.remove("noclick");
-                }
-            }
             cardOne.classList.remove("open", "show");
             cardTwo.classList.remove("open", "show");
+            allowClick();
             twoCards = [];
         }, 2000);
     }

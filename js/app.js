@@ -63,22 +63,26 @@ function turnCard() {
     this.classList.toggle("show");
 }
 
+function matchCards() {
+    let cardOne = twoCards[0];
+    let cardTwo = twoCards[1];
+    if (cardOne.innerHTML === cardTwo.innerHTML) {
+        console.log("It's a match!");
+        cardOne.classList.add("match");
+        cardTwo.classList.add("match");
+    }
+    else {
+        console.log("No match!");
+    }
+}
+
 function pushCards() {
     if (twoCards.length < 2) {
         twoCards.push(this);
         console.log(this);
         console.log(twoCards);
     } if (twoCards.length === 2) {
-        let cardOne = twoCards[0];
-        let cardTwo = twoCards[1];
-        if (cardOne.innerHTML === cardTwo.innerHTML) {
-            console.log("It's a match!");
-            cardOne.classList.add("match");
-            cardTwo.classList.add("match");
-        }
-        else {
-            console.log("No match!");
-        }
+        matchCards();
         console.log("This array contains two cards!");
     } else {
         return;

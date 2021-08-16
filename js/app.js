@@ -66,7 +66,7 @@ function turnCard() {
 function dontClick() {
     for (let i = 0; i < cardDeck.length; i++) {
         if (cardDeck[i].classList.contains("match") === true) {
-            return;
+            console.log("A match!");
         }
         else {
             cardDeck[i].classList.add("noclick");
@@ -77,7 +77,7 @@ function dontClick() {
 function allowClick() {
     for (let i = 0; i < cardDeck.length; i++) {
         if (cardDeck[i].classList.contains("match") === true) {
-            return;
+            console.log("Another match!");
         }
         else {
             cardDeck[i].classList.remove("noclick");
@@ -92,6 +92,7 @@ function matchCards() {
         console.log("It's a match!");
         cardOne.classList.add("match", "noclick");
         cardTwo.classList.add("match", "noclick");
+        twoCards = [];
     }
     else {
         console.log("No match!");

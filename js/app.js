@@ -74,9 +74,11 @@ function matchCards() {
     }
     else {
         console.log("No match!");
-        cardOne.classList.remove("open", "show", "noclick");
-        cardTwo.classList.remove("open", "show", "noclick");
-        twoCards = [];
+        setTimeout(function() {
+            cardOne.classList.remove("open", "show", "noclick");
+            cardTwo.classList.remove("open", "show", "noclick");
+            twoCards = [];
+        }, 2000);
     }
 }
 

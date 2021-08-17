@@ -17,6 +17,8 @@ const symbols = [...icons, ...icons];
 const deck = document.querySelector(".deck");
 const cardDeck = [];
 let twoCards = [];
+const movesCount = document.querySelector(".moves");
+let moves = 0;
 
 
 /*
@@ -106,6 +108,11 @@ function matchCards() {
     }
 }
 
+function countMoves() {
+    moves++;
+    movesCount.innerHTML = moves;
+}
+
 function pushCards() {
     if (twoCards.length < 2) {
         this.classList.add("noclick");
@@ -114,6 +121,7 @@ function pushCards() {
         console.log(twoCards);
     } if (twoCards.length === 2) {
         matchCards();
+        countMoves();
         console.log("This array contains two cards!");
     } else {
         return;
@@ -126,7 +134,6 @@ function createDeck() {
 }
 
 createDeck();
-
 
 /*
  * set up the event listener for a card. If a card is clicked:

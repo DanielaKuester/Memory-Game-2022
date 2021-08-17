@@ -17,9 +17,11 @@ const symbols = [...icons, ...icons];
 const deck = document.querySelector(".deck");
 const cardDeck = [];
 let twoCards = [];
-const movesCount = document.querySelector(".moves");
 let moves = 0;
-
+const movesCount = document.querySelector(".moves");
+const starOne = document.getElementById("star-one");
+const starTwo = document.getElementById("star-two");
+const starThree = document.getElementById("star-three");
 
 /*
  * Display the cards on the page
@@ -111,6 +113,21 @@ function countMoves() {
     movesCount.innerHTML = moves;
 }
 
+function colourStars() {
+    if (moves < 13) {
+        starOne.classList.add("stars-colour");
+        starTwo.classList.add("stars-colour");
+        starThree.classList.add("stars-colour");
+    }
+    if (moves >= 13 && moves < 20) {
+        starThree.classList.remove("stars-colour");
+        console.log("Medium");
+    }
+    if (moves >= 20) {
+        starTwo.classList.remove("stars-colour");
+    }
+}
+
 function pushCards() {
     if (twoCards.length < 2) {
         this.classList.add("noclick");
@@ -118,6 +135,7 @@ function pushCards() {
     } if (twoCards.length === 2) {
         matchCards();
         countMoves();
+        colourStars();
     } else {
         return;
     }

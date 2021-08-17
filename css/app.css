@@ -113,3 +113,7 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.stars-colour {
+    color: orange;
+}

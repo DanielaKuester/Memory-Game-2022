@@ -91,13 +91,11 @@ function matchCards() {
     let cardOne = twoCards[0];
     let cardTwo = twoCards[1];
     if (cardOne.innerHTML === cardTwo.innerHTML) {
-        console.log("It's a match!");
         cardOne.classList.add("match", "noclick");
         cardTwo.classList.add("match", "noclick");
         twoCards = [];
     }
     else {
-        console.log("No match!");
         dontClick();
         setTimeout(function() {
             cardOne.classList.remove("open", "show");
@@ -117,12 +115,9 @@ function pushCards() {
     if (twoCards.length < 2) {
         this.classList.add("noclick");
         twoCards.push(this);
-        console.log(this);
-        console.log(twoCards);
     } if (twoCards.length === 2) {
         matchCards();
         countMoves();
-        console.log("This array contains two cards!");
     } else {
         return;
     }

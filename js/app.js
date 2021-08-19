@@ -188,6 +188,8 @@ function restartGame() {
     starOne.classList.add("stars-colour");
     starTwo.classList.add("stars-colour");
     starThree.classList.add("stars-colour");
+    moves = 0;
+    movesCount.innerHTML = 0;
     removeCards();
     createDeck();
 }

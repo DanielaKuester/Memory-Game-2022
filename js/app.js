@@ -15,7 +15,7 @@ const icons = [
 
 const symbols = [...icons, ...icons];
 const deck = document.querySelector(".deck");
-const cardDeck = [];
+let cardDeck = [];
 let twoCards = [];
 let moves = 0;
 const movesCount = document.querySelector(".moves");
@@ -24,6 +24,7 @@ const starTwo = document.getElementById("star-two");
 const starThree = document.getElementById("star-three");
 let sec = 0;
 let winArray = [];
+let restartButton = document.querySelector(".restart");
 
 /*
  * Display the cards on the page
@@ -99,6 +100,7 @@ function matchCards() {
         cardTwo.classList.add("match", "noclick");
         winArray.push(cardOne);
         winArray.push(cardTwo);
+        console.log(winArray);
         twoCards = [];
     }
     else {
@@ -152,8 +154,8 @@ function pad(val) {
 }
 
 let timer = setInterval(function() {
-    document.getElementById("seconds").innerHTML=pad(++sec%60);
-    document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    document.getElementById("seconds").innerHTML = pad(++sec % 60);
+    document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
 }, 1000);
 
 function startTimer() {
@@ -173,10 +175,28 @@ function winGame() {
     }
 }
 
+function removeCards() {
+    const cards = document.getElementsByClassName("card");
+    while (cards.length > 0) {
+        cards[0].parentNode.removeChild(cards[0]);
+    }
+}
+
+function restartGame() {
+    twoCards = [];
+    winArray = [];
+    starOne.classList.add("stars-colour");
+    starTwo.classList.add("stars-colour");
+    starThree.classList.add("stars-colour");
+    removeCards();
+    createDeck();
+}
+
 function createDeck() {
 	shuffle(symbols);
 	createCard();
     startTimer();
+    restartButton.addEventListener('click', restartGame);
 }
 
 createDeck();

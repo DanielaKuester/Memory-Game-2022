@@ -142,14 +142,23 @@ function pushCards() {
     }
 }
 
-/* The code from the countUp function is from https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript */
-function startTimer() {
-    function pad (val) { return val > 9 ? val : "0" + val; }
-    setInterval( function(){
-        document.getElementById("seconds").innerHTML=pad(++sec%60);
-        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
-    }, 1000);
+/* The code for the timer is from https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript and adjusted to this project */
+
+function pad(val) { 
+    return val > 9 ? val : "0" + val;
 }
+
+let timer = setInterval(function() {
+    document.getElementById("seconds").innerHTML=pad(++sec%60);
+    document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+}, 1000);
+
+function startTimer() {
+    pad();
+    timer;
+}
+
+// To stop the timer: clearInterval(timer);
 
 function createDeck() {
 	shuffle(symbols);

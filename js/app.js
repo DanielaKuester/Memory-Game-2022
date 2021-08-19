@@ -190,6 +190,9 @@ function restartGame() {
     starThree.classList.add("stars-colour");
     moves = 0;
     movesCount.innerHTML = 0;
+    sec = 0;
+    document.getElementById("seconds").innerHTML = 0;
+    document.getElementById("minutes").innerHTML = 0;
     removeCards();
     createDeck();
 }

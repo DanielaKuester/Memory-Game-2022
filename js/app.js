@@ -166,6 +166,7 @@ function startTimer() {
 function winGame() {
     if (winArray.length === 16) {
         console.log("You win!");
+        clearInterval(timer);
     }
     else {
         // do nothing

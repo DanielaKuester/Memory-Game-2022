@@ -22,6 +22,7 @@ const movesCount = document.querySelector(".moves");
 const starOne = document.getElementById("star-one");
 const starTwo = document.getElementById("star-two");
 const starThree = document.getElementById("star-three");
+let sec = 0;
 
 /*
  * Display the cards on the page
@@ -141,9 +142,19 @@ function pushCards() {
     }
 }
 
+/* The code from the countUp function is from https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript */
+function startTimer() {
+    function pad (val) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        document.getElementById("seconds").innerHTML=pad(++sec%60);
+        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    }, 1000);
+}
+
 function createDeck() {
 	shuffle(symbols);
 	createCard();
+    startTimer();
 }
 
 createDeck();

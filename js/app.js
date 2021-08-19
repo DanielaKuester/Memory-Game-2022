@@ -23,6 +23,7 @@ const starOne = document.getElementById("star-one");
 const starTwo = document.getElementById("star-two");
 const starThree = document.getElementById("star-three");
 let sec = 0;
+let winArray = [];
 
 /*
  * Display the cards on the page
@@ -71,7 +72,7 @@ function turnCard() {
 function dontClick() {
     for (let i = 0; i < cardDeck.length; i++) {
         if (cardDeck[i].classList.contains("match") === true) {
-            console.log("A match!");
+            // do nothing
         }
         else {
             cardDeck[i].classList.add("noclick");
@@ -82,7 +83,7 @@ function dontClick() {
 function allowClick() {
     for (let i = 0; i < cardDeck.length; i++) {
         if (cardDeck[i].classList.contains("match") === true) {
-            console.log("Another match!");
+            // do nothing
         }
         else {
             cardDeck[i].classList.remove("noclick");
@@ -96,6 +97,8 @@ function matchCards() {
     if (cardOne.innerHTML === cardTwo.innerHTML) {
         cardOne.classList.add("match", "noclick");
         cardTwo.classList.add("match", "noclick");
+        winArray.push(cardOne);
+        winArray.push(cardTwo);
         twoCards = [];
     }
     else {
@@ -122,7 +125,6 @@ function colourStars() {
     }
     if (moves >= 13 && moves < 20) {
         starThree.classList.remove("stars-colour");
-        console.log("Medium");
     }
     if (moves >= 20) {
         starTwo.classList.remove("stars-colour");
@@ -137,6 +139,7 @@ function pushCards() {
         matchCards();
         countMoves();
         colourStars();
+        winGame();
     } else {
         return;
     }
@@ -159,6 +162,15 @@ function startTimer() {
 }
 
 // To stop the timer: clearInterval(timer);
+
+function winGame() {
+    if (winArray.length === 16) {
+        console.log("You win!");
+    }
+    else {
+        // do nothing
+    }
+}
 
 function createDeck() {
 	shuffle(symbols);

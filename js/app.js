@@ -166,17 +166,11 @@ function startTimer() {
 
 /* The code for the modal is from a W3 schools tutorial and adapted to this project https://www.w3schools.com/howto/howto_css_modals.asp */
 
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+const modal = document.getElementById("myModal");
+const closeButton = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+closeButton.onclick = function() {
   modal.style.display = "none";
 }
 

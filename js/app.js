@@ -25,6 +25,7 @@ const starThree = document.getElementById("star-three");
 let sec = 0;
 let winArray = [];
 let restartButton = document.querySelector(".restart");
+let winText = document.getElementById("winning");
 
 /*
  * Display the cards on the page
@@ -192,6 +193,8 @@ function winGame() {
     if (winArray.length === 16) {
         console.log("You win!");
         clearInterval(timer);
+        winText.innerHTML = `You made ${moves} moves in ${minutes.innerHTML}:${seconds.innerHTML} min.`;
+        modal.style.display = "block";
     }
     else {
         // do nothing

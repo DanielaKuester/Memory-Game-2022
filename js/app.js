@@ -19,9 +19,10 @@ let cardDeck = [];
 let twoCards = [];
 let moves = 0;
 const movesCount = document.querySelector(".moves");
-const starOne = document.getElementById("star-one");
-const starTwo = document.getElementById("star-two");
-const starThree = document.getElementById("star-three");
+const starOne = document.querySelector(".star-one");
+const starTwo = document.querySelector(".star-two");
+const starThree = document.querySelector(".star-three");
+const stars = document.querySelector(".stars");
 let sec = 0;
 let winArray = [];
 let restartButton = document.querySelector(".restart");
@@ -187,7 +188,7 @@ function winGame() {
     if (winArray.length === 16) {
         console.log("You win!");
         clearInterval(timer);
-        winText.innerHTML = `You made ${moves} moves in ${minutes.innerHTML}:${seconds.innerHTML} min.`;
+        winText.innerHTML = `You made ${moves} moves in ${minutes.innerHTML}:${seconds.innerHTML} min. Rating: ${stars.innerHTML}`;
         modal.style.display = "block";
     }
     else {

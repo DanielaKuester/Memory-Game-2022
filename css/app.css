@@ -34,6 +34,11 @@ h1 {
     font-weight: 300;
 }
 
+li {
+    list-style: none;
+    display: inline-block;
+}
+
 /*
  * Styles for the deck of cards
  */
@@ -144,13 +149,14 @@ h1 {
     border: 1px solid #888;
     width: 30%; /* Could be more or less, depending on screen size */
     color: #000000;
+    font-size: 24px;
 }
 
   /* The Close Button */
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 70px;
     font-weight: bold;
 }
   

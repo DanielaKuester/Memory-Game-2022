@@ -212,6 +212,7 @@ function restartGame() {
     moves = 0;
     movesCount.innerHTML = 0;
     sec = 0;
+    clearInterval(timer);
     timer = setInterval(function() {
         document.getElementById("seconds").innerHTML = pad(++sec % 60);
         document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));

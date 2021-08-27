@@ -182,6 +182,10 @@ window.onclick = function(event) {
   }
 }
 
+function closeModal() {
+    modal.style.display = "none";
+}
+
 // To stop the timer: clearInterval(timer);
 
 function winGame() {
@@ -190,6 +194,8 @@ function winGame() {
         clearInterval(timer);
         winText.innerHTML = `You made ${moves} moves in ${minutes.innerHTML}:${seconds.innerHTML} min. Rating: ${stars.innerHTML}`;
         modal.style.display = "block";
+        document.getElementById("play-again").addEventListener('click', restartGame);
+        document.getElementById("play-again").addEventListener('click', closeModal);
     }
     else {
         // do nothing

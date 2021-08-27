@@ -99,20 +99,26 @@ function matchCards() {
     let cardOne = twoCards[0];
     let cardTwo = twoCards[1];
     if (cardOne.innerHTML === cardTwo.innerHTML) {
-        cardOne.classList.remove("animate__animated", "animate__flipInY");
-        cardTwo.classList.remove("animate__animated", "animate__flipInY");
-        cardOne.classList.add("match", "noclick", "animate__animated", "animate__bounce");
-        cardTwo.classList.add("match", "noclick", "animate__animated", "animate__bounce");
+        cardOne.classList.add("match", "noclick");
+        cardTwo.classList.add("match", "noclick");
+        setTimeout(function() {
+            cardOne.classList.remove("animate__animated", "animate__flipInY");
+            cardTwo.classList.remove("animate__animated", "animate__flipInY");
+            cardOne.classList.add("animate__animated", "animate__bounce");
+            cardTwo.classList.add("animate__animated", "animate__bounce");
+        }, 1000);
         winArray.push(cardOne);
         winArray.push(cardTwo);
         console.log(winArray);
         twoCards = [];
     }
     else {
-        cardOne.classList.remove("animate__animated", "animate__flipInY");
-        cardTwo.classList.remove("animate__animated", "animate__flipInY");
-        cardOne.classList.add("animate__animated", "animate__shakeX");
-        cardTwo.classList.add("animate__animated", "animate__shakeX");
+        setTimeout(function() {
+            cardOne.classList.remove("animate__animated", "animate__flipInY");
+            cardTwo.classList.remove("animate__animated", "animate__flipInY");
+            cardOne.classList.add("animate__animated", "animate__shakeX");
+            cardTwo.classList.add("animate__animated", "animate__shakeX");
+        }, 1000);
         dontClick();
         setTimeout(function() {
             cardOne.classList.remove("open", "show", "animate__animated", "animate__shakeX");

@@ -96,8 +96,11 @@ li {
  */
 
 .score-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     text-align: left;
-    width: 345px;
+    width: 660px;
     margin-bottom: 10px;
     font-size: 24px;
 }
@@ -114,13 +117,17 @@ li {
     display: inline-block;
 }
 
+.stars-colour {
+    color: orange;
+}
+
+#timer {
+    width: 50px;
+}
+
 .score-panel .restart {
     float: right;
     cursor: pointer;
-}
-
-.stars-colour {
-    color: orange;
 }
 
 /*
@@ -150,21 +157,4 @@ li {
     width: 30%; /* Could be more or less, depending on screen size */
     color: #000000;
     font-size: 24px;
-}
-
-  /* The Close Button */
-.close {
-    color: #aaa;
-    position: fixed;
-    right: 20px;
-    top: 10px;
-    font-size: 70px;
-    font-weight: bold;
-}
-  
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }

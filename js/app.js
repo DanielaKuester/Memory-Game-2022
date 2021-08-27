@@ -196,6 +196,7 @@ function winGame() {
         modal.style.display = "block";
         document.getElementById("play-again").addEventListener('click', restartGame);
         document.getElementById("play-again").addEventListener('click', closeModal);
+        document.getElementById("cancel").addEventListener('click', closeModal);
     }
     else {
         // do nothing

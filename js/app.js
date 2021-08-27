@@ -106,10 +106,12 @@ function matchCards() {
         twoCards = [];
     }
     else {
+        cardOne.classList.add("animate__animated", "animate__shakeX");
+        cardTwo.classList.add("animate__animated", "animate__shakeX");
         dontClick();
         setTimeout(function() {
-            cardOne.classList.remove("open", "show");
-            cardTwo.classList.remove("open", "show");
+            cardOne.classList.remove("open", "show", "animate__animated", "animate__shakeX");
+            cardTwo.classList.remove("open", "show", "animate__animated", "animate__shakeX");
             allowClick();
             twoCards = [];
         }, 2000);

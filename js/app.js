@@ -70,6 +70,7 @@ function clickCard(chosenCard) {
 function turnCard() {
     this.classList.toggle("open");
     this.classList.toggle("show");
+    this.classList.add("animate__animated", "animate__flipInY");
 }
 
 function dontClick() {
@@ -98,6 +99,8 @@ function matchCards() {
     let cardOne = twoCards[0];
     let cardTwo = twoCards[1];
     if (cardOne.innerHTML === cardTwo.innerHTML) {
+        cardOne.classList.remove("animate__animated", "animate__flipInY");
+        cardTwo.classList.remove("animate__animated", "animate__flipInY");
         cardOne.classList.add("match", "noclick", "animate__animated", "animate__bounce");
         cardTwo.classList.add("match", "noclick", "animate__animated", "animate__bounce");
         winArray.push(cardOne);
@@ -106,6 +109,8 @@ function matchCards() {
         twoCards = [];
     }
     else {
+        cardOne.classList.remove("animate__animated", "animate__flipInY");
+        cardTwo.classList.remove("animate__animated", "animate__flipInY");
         cardOne.classList.add("animate__animated", "animate__shakeX");
         cardTwo.classList.add("animate__animated", "animate__shakeX");
         dontClick();

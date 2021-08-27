@@ -155,7 +155,9 @@ li {
   /* The Close Button */
 .close {
     color: #aaa;
-    float: right;
+    position: fixed;
+    right: 20px;
+    top: 10px;
     font-size: 70px;
     font-weight: bold;
 }

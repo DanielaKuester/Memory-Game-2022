@@ -98,8 +98,8 @@ function matchCards() {
     let cardOne = twoCards[0];
     let cardTwo = twoCards[1];
     if (cardOne.innerHTML === cardTwo.innerHTML) {
-        cardOne.classList.add("match", "noclick");
-        cardTwo.classList.add("match", "noclick");
+        cardOne.classList.add("match", "noclick", "animate__animated", "animate__bounce");
+        cardTwo.classList.add("match", "noclick", "animate__animated", "animate__bounce");
         winArray.push(cardOne);
         winArray.push(cardTwo);
         console.log(winArray);
